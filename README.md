@@ -1,5 +1,8 @@
 # GuitarReader-Atmega2560
 
+## 데이터 분석
+![데이터분석](https://user-images.githubusercontent.com/59993347/139521515-095555d6-a22e-41e5-94a8-98ec07217c74.png)
+
 ## 참조
 - [OpenMusicLabs - FFT] http://wiki.openmusiclabs.com/wiki/ArduinoFFT
 - [Arduino Reference] https://www.arduino.cc/reference/en/libraries/arduinofft/

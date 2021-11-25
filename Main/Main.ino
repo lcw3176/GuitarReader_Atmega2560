@@ -16,7 +16,7 @@ void setup(){
   analogReference(EXTERNAL);
 }
 void loop(){
-  
+
   if (count < LENGTH) {
 
     int sample = analogRead(A0);
@@ -32,7 +32,7 @@ void loop(){
     }
     
   } else {
-    
+
     long sum = 0;
     long sum_old = 0;
     int freq_per = 0;
@@ -64,7 +64,7 @@ void loop(){
         pd_state = 1;
       }
     }
-
+    
     // 특정 값을 넘지 않으면 진행 안하는 방식으로
     // 어느정도 잡음 필터링
     double volts = ((signalMax - signalMin) * 3.3) / 1024;
@@ -74,15 +74,17 @@ void loop(){
     if (period != 0) {
       freq_per = sample_freq / period;
 
+      // 볼륨값이 작아지는 상황은 필터링
+      // 연주했을 때 한번만 입력받음
       if(freq_per < 1500 && volume > beforeVolume){
         beforeFrequency = freq_per;
         String data = String(freq_per);
-
-     for(int j = 0; j < data.length(); j++){
-       Serial.write(data[j]);
-     }
-    
-     Serial.write("\n");
+  
+        for(int j = 0; j < data.length(); j++){
+          Serial.write(data[j]);
+        }
+        
+        Serial.write("\n");
       }      
     }
 

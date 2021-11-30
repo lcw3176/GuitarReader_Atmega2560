@@ -26,6 +26,8 @@
 - Test: 테스트 했던 코드들
 - Main: 프로젝트에 사용된 메인 코드
 
+### 작동 영상
+- https://www.youtube.com/watch?v=zB0uJF3MIWw
 ## 조사 자료
 ### 데이터 분석
 ![데이터분석](https://user-images.githubusercontent.com/59993347/139521515-095555d6-a22e-41e5-94a8-98ec07217c74.png)

@@ -5,14 +5,11 @@
 int rawData[LENGTH];
 int count = 0;
 
-unsigned int signalMax = 0;
-unsigned int signalMin = 1024;
+unsigned long beforeMills = 0;
 
-int beforeVolume = 0;
-int beforeFrequency = 0;
 
 void setup(){
-  Serial.begin(115200);
+  Serial.begin(9600);
   analogReference(EXTERNAL);
 }
 void loop(){
@@ -22,14 +19,6 @@ void loop(){
     int sample = analogRead(A0);
     rawData[count] = sample;
     count++;
-
-     
-    // 소리 크기 측정
-    if(sample > signalMax){
-      signalMax = sample;
-    } else if(sample < signalMin){
-      signalMin = sample;
-    }
     
   } else {
 
@@ -65,40 +54,27 @@ void loop(){
       }
     }
     
-    // 특정 값을 넘지 않으면 진행 안하는 방식으로
-    // 어느정도 잡음 필터링
-    double volts = ((signalMax - signalMin) * 3.3) / 1024;
-    int volume = volts / 3.3 * 100;
-
     // Frequency identified in Hz
     if (period != 0) {
       freq_per = sample_freq / period;
 
-      // 볼륨값이 작아지는 상황은 필터링
-      // 연주했을 때 한번만 입력받음
-      if(freq_per < 1500 && volume > beforeVolume){
-        beforeFrequency = freq_per;
+      if(freq_per < 500 && millis() - beforeMills >= 1000){
         String data = String(freq_per);
-  
+        beforeMills = millis();
         for(int j = 0; j < data.length(); j++){
           Serial.write(data[j]);
         }
         
         Serial.write("\n");
-      }      
-    }
+        
+      }
 
-    if(freq_per != 0 && freq_per < 1500 && abs(beforeFrequency - freq_per) >= 20){
-      beforeVolume = 0;
-    } else{
-      beforeVolume = volume + (volume * 0.3);
-    }
-    
+
+    } 
+
     signalMax = 0;
     signalMin = 1024;
     count = 0;
 
   }
-
-
 }

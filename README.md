@@ -8,6 +8,8 @@
 - ~~볼륨 컨트롤~~
     - ~~볼륨이 점점 작아지는 상황에서는 작동하지 않습니다~~
     - ~~기타 줄을 친 순간에만 인식합니다~~
+- 시간 단위 인식
+    - 1초 단위로 음을 인식합니다.
 - 시리얼 통신
     - [GuitarReader_Cs](https://github.com/lcw3176/GuitarReader_Cs)이랑 데이터 전송을 위해 사용됩니다.
 ### 기술 스택, 사용된 부품
@@ -16,6 +18,10 @@
 - OPA344 사운드 모듈
 
 ### 회로 구성
+#### 회로도
+<img src="https://user-images.githubusercontent.com/59993347/145511508-1de50039-0adc-41bd-b8cf-9b0ac2d63d58.png">
+
+#### 실제 구성 사진
 <img src="https://user-images.githubusercontent.com/59993347/143398275-069817ab-1a63-4ce6-9a4b-05fee07a63c3.jpg" height="300">
 
 - 3.3v 사용 (OPA344 전원, 아두이노 레퍼런스 전압)
@@ -27,7 +33,10 @@
 - Main: 프로젝트에 사용된 메인 코드
 
 ### 작동 영상
+<iframe width="658" height="370" src="https://www.youtube.com/embed/zB0uJF3MIWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 - https://www.youtube.com/watch?v=zB0uJF3MIWw
+
 ## 조사 자료
 ### 데이터 분석
 ![데이터분석](https://user-images.githubusercontent.com/59993347/139521515-095555d6-a22e-41e5-94a8-98ec07217c74.png)

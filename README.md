@@ -33,7 +33,7 @@
 - Main: 프로젝트에 사용된 메인 코드
 
 ### 작동 영상
-<iframe width="658" height="370" src="https://www.youtube.com/embed/zB0uJF3MIWw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![비디오](https://i.ytimg.com/vi/zB0uJF3MIWw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAiWvBVHaPLJXB4CBDCHRaD3CxITg)](https://www.youtube.com/watch?v=zB0uJF3MIWw)
 
 - https://www.youtube.com/watch?v=zB0uJF3MIWw
 
